@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Effects - Animate demo</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+    .toggler { width: 500px; height: 200px; position: relative; }
+    #button { padding: .5em 1em; text-decoration: none; background-color: #2196F3; font-size: large; color: rgb(255, 255, 255);}
+    #effect { width: 240px; height: 100px; padding: 0.4em; position: relative; background: rgb(146, 245, 240);color: rgb(5, 5, 5); }
+    #effect h3{ margin: 0; padding: 0.4em; text-align: left; opacity: 0.5;  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    let state = true;
+    $( "#button" ).on( "click", function() {
+      if ( state ) {
+        $( "#effect" ).animate({
+          backgroundColor: "#aa0000",
+          color: "#fff",
+          left: '300px',
+          height: '+150px',
+          width: '+500px', 
+          fontSize: '5em'
+        }, 1000 );
+      } else {
+        $( "#effect" ).animate({
+          backgroundColor: "#2196F3",
+          color: "#000",
+          left: '300px',
+          height: '+300px',
+          width: '+500px',
+        }, 1000 );
+      }
+      state = !state;
+    });
+  } );
+  </script>
+</head>
+<body>
+ 
+<div class="toggler">
+  <div id="effect" class="ui-widget-content ui-corner-all">
+    <h3>jQuery</h3>
+  </div>
+</div>
+<button id="button" class="ui-state-default ui-corner-all">Start Animation</button>
+</body>
+</html>

@@ -1,21 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="jquery-3.4.1.min.js"></script>
-    <title>jQuery</title>
+	<script src="jquery-3.4.1.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$("#in1").keydown(function (event) {
+				$("#d1").html("Key: " + event.which);
+			}),
+
+				$("#in2").click(function () {
+					$("#d2").html("Key: " + event.which);
+				}),
+
+				$("#in3").keydown(function (e) {
+					if (e.keyCode == 13) {
+						e.preventDefault();
+						$("#d3").html($(this).val());
+						$(this).val("");
+					}
+				});
+		});
+
+	</script>
 </head>
 
 <body>
+	<div>mini Lab 1: </div>
+	<div> ลองเปลี่ยน keydown เป็น keypress แล้วหาข้อแตกต่าง</div>
+	<br>
+	<div>D1 : keydown() </div>
 
+	Enter : <input id="in1" type="text">
+	<div id="d1">D1 </div>
+	<br>
+	<div>D2 : keypress() </div>
+	
+	Enter : <input id="in2" type="text">
+	<div id="d2">D2 : </div>
+	<br>
+	<br>
+	<hr>
+	<br>
 
+	<div>mini Lab 2:</div>
+	<div>1. เมื่อกด Enter แล้วให้ clear ตัว input ให้ว่าง</div>
+	<div>2. เมื่อกด Enter แล้วให้ข้อความนั้นไปปรากฎที่ div ด้านล่าง</div>
+	<br>
 
+	<input type="text" value="Hello world!" id="in3">
+	<br>
+
+	<div id="d3">Hello world! </div>
+	<hr>
+</body>
 
 </body>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
-</script> -->
 
 </html>
